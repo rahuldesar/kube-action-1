@@ -1,0 +1,18 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dwk-environments
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dwk-environments
+  template:
+    metadata:
+      labels:
+        app: dwk-environments
+    spec:
+      containers:
+        - name: dwk-environments
+          image: PROJECT/IMAGE
